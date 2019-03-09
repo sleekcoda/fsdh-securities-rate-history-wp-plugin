@@ -1,0 +1,85 @@
+<div class="wrap">
+	<style>
+	div#ui-datepicker-div 
+	{
+		background: rgba(255,255,255,0.9);
+		box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+		padding:10px;
+	}
+	span.ui-icon.ui-icon-circle-triangle-w { margin-right: 15px; }
+	td a.ui-state-default.ui-state-hover {
+    	background: #fff;
+		box-shadow: 0 0 1px rgba(0,0,0,.2);
+	}
+	.ui-datepicker-title {
+    	text-align: center;
+    	font-weight: 700;
+	}
+		th[scope=row]{
+			text-align:right;
+		}
+		.error{
+			display:table-cell;
+			color:red;
+		}
+	</style>
+	
+    <h1> Rate History </h1>
+    <p>Copy and past <code>[fsdh_latest_share_price]</code> to display latest data</p>
+    <hr>
+    <form id="rc_rate_history_form">
+        <?php wp_nonce_field('rc_rate_history', 'rc_rate_nonce'); ?>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th scope="row">Date</th>
+                    <td><input type="date" name="date" id="datepicker" required></td>
+                </tr>
+                <tr>
+                    <th scope="row">Growth Bid</th>
+                    <td>
+						<input type="number" name="growth_fb" id="growth_fb" required>
+					</td>
+                </tr>
+                <tr>
+                    <th scope="row">Growth Offer</th>
+                    <td><input type="number" name="growth_fo" id="growth_fo" required></td>
+                </tr>
+                <tr>
+                    <th scope="row">Income Bid</th>
+                    <td><input type="number" name="income_fb" id="income_fb" required></td>
+                </tr>
+				<tr>
+                    <th scope="row">Income Offer</th>
+                    <td><input type="number" name="income_fo" id="income_fo" required></td>
+                </tr>
+                <tr>
+                    <th scope="row">UPDC REIT</th>
+                    <td><input type="number" name="updcreit" id="updcreit" required></td>
+                </tr>
+                
+                <tr>
+                    <th scope="row"> </th>
+                    <td><input type="submit" value="Submit"  class="button  button-primary"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <hr>
+    <h2>Bulk Import</h2>
+    <form id="rc_rate_history_bulk_import">
+        <table>
+            <tbody>
+                <th scope="row">Import</th>
+                <td><input type="file" name="csv" id="csv" required></td>
+                <td>
+                    <input type="submit" value="Upload" class="button  button-primary">
+                </td>
+            </tbody>
+        </table>
+    </form>
+	<script>
+		
+	</script>
+</div>
